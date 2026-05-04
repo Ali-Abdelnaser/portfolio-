@@ -36,25 +36,33 @@ export function Hero() {
       {/* Top-edge spotlight */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 left-1/2 h-[420px] w-[680px] -translate-x-1/2 rounded-full bg-blue-600/28 blur-[110px]"
+        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 rounded-full bg-blue-600/28
+          h-[180px] w-[280px] blur-[50px]
+          md:h-[420px] md:w-[680px] md:blur-[110px]"
       />
 
       {/* Animated colour blobs */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-0 h-[560px] w-[560px] rounded-full bg-blue-600/18 blur-[90px] md:blur-[130px]"
+        className="pointer-events-none absolute -left-40 top-0 rounded-full bg-blue-600/18
+          h-[240px] w-[240px] blur-[40px]
+          md:h-[560px] md:w-[560px] md:blur-[130px]"
         animate={{ y: [0, -28, 0], x: [0, 20, 0], scale: [1, 1.07, 1] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 bottom-0 h-[560px] w-[560px] rounded-full bg-sky-500/15 blur-[90px] md:blur-[130px]"
+        className="pointer-events-none absolute -right-40 bottom-0 rounded-full bg-sky-500/15
+          h-[240px] w-[240px] blur-[40px]
+          md:h-[560px] md:w-[560px] md:blur-[130px]"
         animate={{ y: [0, 28, 0], x: [0, -20, 0], scale: [1, 1.06, 1] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute right-[20%] top-[30%] h-80 w-80 rounded-full bg-violet-500/10 blur-[60px] md:blur-[80px]"
+        className="pointer-events-none absolute right-[20%] top-[30%] rounded-full bg-violet-500/10 max-md:hidden
+          h-80 w-80 blur-[60px]
+          md:blur-[80px]"
         animate={{ scale: [1, 1.22, 1], opacity: [0.5, 0.9, 0.5] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -161,8 +169,8 @@ export function Hero() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
           {/* Far ambient glow */}
-          <div className="pointer-events-none absolute -inset-10 rounded-[3rem] bg-blue-500/18 blur-[44px] max-md:opacity-70 md:blur-[60px]" />
-          <div className="pointer-events-none absolute -inset-5 rounded-[2.5rem] bg-sky-400/12 blur-[22px] max-md:opacity-60 md:blur-[30px]" />
+          <div className="pointer-events-none absolute -inset-10 rounded-[3rem] bg-blue-500/18 blur-[20px] md:blur-[60px]" />
+          <div className="pointer-events-none absolute -inset-5 rounded-[2.5rem] bg-sky-400/12 blur-[10px] md:blur-[30px]" />
 
           {/* Outer orbit ring */}
           <motion.div
@@ -209,7 +217,7 @@ export function Hero() {
 
           {/* Floating badge — left */}
           <motion.div
-            className="absolute left-2 top-9 flex max-w-[calc(100%-1rem)] items-center gap-2 rounded-2xl border border-blue-400/25 bg-zinc-900/90 px-2.5 py-2 text-[11px] text-zinc-200 shadow-[0_14px_40px_rgba(59,130,246,0.22)] backdrop-blur-md md:left-[-1.25rem] md:top-10 md:max-w-none md:px-3 md:py-2.5 md:text-xs"
+            className="absolute left-2 top-9 flex max-w-[calc(100%-1rem)] items-center gap-2 rounded-2xl border border-blue-400/25 bg-zinc-900/95 px-2.5 py-2 text-[11px] text-zinc-200 shadow-[0_8px_20px_rgba(0,0,0,0.5)] md:left-[-1.25rem] md:top-10 md:max-w-none md:bg-zinc-900/90 md:px-3 md:py-2.5 md:text-xs md:shadow-[0_14px_40px_rgba(59,130,246,0.22)] md:backdrop-blur-md"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -220,7 +228,7 @@ export function Hero() {
 
           {/* Floating badge — right */}
           <motion.div
-            className="absolute right-2 bottom-[4.5rem] flex max-w-[calc(100%-1rem)] items-center gap-2 rounded-2xl border border-sky-400/25 bg-zinc-900/90 px-2.5 py-2 text-[11px] text-zinc-200 shadow-[0_14px_40px_rgba(14,165,233,0.2)] backdrop-blur-md md:right-[-1.25rem] md:bottom-16 md:max-w-none md:px-3 md:py-2.5 md:text-xs"
+            className="absolute right-2 bottom-[4.5rem] flex max-w-[calc(100%-1rem)] items-center gap-2 rounded-2xl border border-sky-400/25 bg-zinc-900/95 px-2.5 py-2 text-[11px] text-zinc-200 shadow-[0_8px_20px_rgba(0,0,0,0.5)] md:right-[-1.25rem] md:bottom-16 md:max-w-none md:bg-zinc-900/90 md:px-3 md:py-2.5 md:text-xs md:shadow-[0_14px_40px_rgba(14,165,233,0.2)] md:backdrop-blur-md"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 4.7, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -231,7 +239,7 @@ export function Hero() {
 
           {/* Floating pill — bottom */}
           <motion.div
-            className="absolute bottom-2 left-1/2 flex max-w-[calc(100vw-2rem)] -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-700/55 bg-zinc-900/90 px-3 py-1.5 text-[10px] text-zinc-300 shadow-[0_8px_28px_rgba(0,0,0,0.5)] backdrop-blur-md md:-bottom-4 md:max-w-none md:px-4 md:py-2 md:text-[11px]"
+            className="absolute bottom-2 left-1/2 flex max-w-[calc(100vw-2rem)] -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-700/55 bg-zinc-900/95 px-3 py-1.5 text-[10px] text-zinc-300 shadow-[0_6px_18px_rgba(0,0,0,0.5)] md:-bottom-4 md:max-w-none md:bg-zinc-900/90 md:px-4 md:py-2 md:text-[11px] md:shadow-[0_8px_28px_rgba(0,0,0,0.5)] md:backdrop-blur-md"
             animate={{ y: [0, 7, 0] }}
             transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
           >
