@@ -204,7 +204,8 @@ export function AppShowcase({ projects }: AppShowcaseProps) {
                       const shotNumber =
                         Number(image.match(/-(\d+)(?=\.[^.]+$)/)?.[1] ?? "0") || 0;
                       const isSecondShot = shotNumber === 2;
-                      const isPriority = projectIndex < 2 || shotNumber === 2;
+                      const isPriority =
+                        projectIndex === 0 && shotNumber === 2;
                       const baseZ =
                         shotNumber === 2 ? "z-40" : shotNumber === 3 ? "z-20" : "z-10";
                       const positionClass =

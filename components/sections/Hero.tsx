@@ -42,19 +42,19 @@ export function Hero() {
       {/* Animated colour blobs */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-0 h-[560px] w-[560px] rounded-full bg-blue-600/18 blur-[130px]"
+        className="pointer-events-none absolute -left-40 top-0 h-[560px] w-[560px] rounded-full bg-blue-600/18 blur-[90px] md:blur-[130px]"
         animate={{ y: [0, -28, 0], x: [0, 20, 0], scale: [1, 1.07, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 bottom-0 h-[560px] w-[560px] rounded-full bg-sky-500/15 blur-[130px]"
+        className="pointer-events-none absolute -right-40 bottom-0 h-[560px] w-[560px] rounded-full bg-sky-500/15 blur-[90px] md:blur-[130px]"
         animate={{ y: [0, 28, 0], x: [0, -20, 0], scale: [1, 1.06, 1] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute right-[20%] top-[30%] h-80 w-80 rounded-full bg-violet-500/10 blur-[80px]"
+        className="pointer-events-none absolute right-[20%] top-[30%] h-80 w-80 rounded-full bg-violet-500/10 blur-[60px] md:blur-[80px]"
         animate={{ scale: [1, 1.22, 1], opacity: [0.5, 0.9, 0.5] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -161,13 +161,13 @@ export function Hero() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
           {/* Far ambient glow */}
-          <div className="absolute -inset-10 rounded-[3rem] bg-blue-500/18 blur-[60px]" />
-          <div className="absolute -inset-5 rounded-[2.5rem] bg-sky-400/12 blur-[30px]" />
+          <div className="pointer-events-none absolute -inset-10 rounded-[3rem] bg-blue-500/18 blur-[44px] max-md:opacity-70 md:blur-[60px]" />
+          <div className="pointer-events-none absolute -inset-5 rounded-[2.5rem] bg-sky-400/12 blur-[22px] max-md:opacity-60 md:blur-[30px]" />
 
           {/* Outer orbit ring */}
           <motion.div
             aria-hidden="true"
-            className="absolute inset-[-12%] rounded-full"
+            className="absolute inset-[-10%] rounded-full md:inset-[-12%]"
             style={{ border: "1.5px dashed rgba(99,130,246,0.28)" }}
             animate={{ rotate: 360 }}
             transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
@@ -178,7 +178,7 @@ export function Hero() {
           {/* Inner orbit ring */}
           <motion.div
             aria-hidden="true"
-            className="absolute inset-[-22%] rounded-full"
+            className="absolute inset-[-18%] rounded-full md:inset-[-22%]"
             style={{ border: "1px dashed rgba(14,165,233,0.16)" }}
             animate={{ rotate: -360 }}
             transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
@@ -194,7 +194,7 @@ export function Hero() {
                 alt="Ali Abdelnaser profile photo"
                 fill
                 sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 500px"
-                className="object-cover brightness-[1.06] contrast-[1.1] saturate-[1.08]"
+                className="object-cover object-[50%_18%] brightness-[1.06] contrast-[1.1] saturate-[1.08] md:object-[50%_22%]"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080810]/65 via-transparent to-transparent" />
@@ -209,27 +209,29 @@ export function Hero() {
 
           {/* Floating badge — left */}
           <motion.div
-            className="absolute -left-5 top-10 hidden items-center gap-2 rounded-2xl border border-blue-400/25 bg-zinc-900/90 px-3 py-2.5 text-xs text-zinc-200 shadow-[0_14px_40px_rgba(59,130,246,0.22)] backdrop-blur-md md:flex"
+            className="absolute left-2 top-9 flex max-w-[calc(100%-1rem)] items-center gap-2 rounded-2xl border border-blue-400/25 bg-zinc-900/90 px-2.5 py-2 text-[11px] text-zinc-200 shadow-[0_14px_40px_rgba(59,130,246,0.22)] backdrop-blur-md md:left-[-1.25rem] md:top-10 md:max-w-none md:px-3 md:py-2.5 md:text-xs"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
           >
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-blue-500/20 text-sm">🏗️</span>
-            Clean Architecture
+            <span className="md:hidden">Clean Arch.</span>
+            <span className="hidden md:inline">Clean Architecture</span>
           </motion.div>
 
           {/* Floating badge — right */}
           <motion.div
-            className="absolute -right-5 bottom-16 hidden items-center gap-2 rounded-2xl border border-sky-400/25 bg-zinc-900/90 px-3 py-2.5 text-xs text-zinc-200 shadow-[0_14px_40px_rgba(14,165,233,0.2)] backdrop-blur-md md:flex"
+            className="absolute right-2 bottom-[4.5rem] flex max-w-[calc(100%-1rem)] items-center gap-2 rounded-2xl border border-sky-400/25 bg-zinc-900/90 px-2.5 py-2 text-[11px] text-zinc-200 shadow-[0_14px_40px_rgba(14,165,233,0.2)] backdrop-blur-md md:right-[-1.25rem] md:bottom-16 md:max-w-none md:px-3 md:py-2.5 md:text-xs"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 4.7, repeat: Infinity, ease: "easeInOut" }}
           >
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-sky-500/20 text-sm">⚡</span>
-            BLoC + Firebase
+            <span className="md:hidden">BLoC · Firebase</span>
+            <span className="hidden md:inline">BLoC + Firebase</span>
           </motion.div>
 
           {/* Floating pill — bottom */}
           <motion.div
-            className="absolute -bottom-4 left-1/2 hidden -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-700/55 bg-zinc-900/90 px-4 py-2 text-[11px] text-zinc-300 shadow-[0_8px_28px_rgba(0,0,0,0.5)] backdrop-blur-md md:flex"
+            className="absolute bottom-2 left-1/2 flex max-w-[calc(100vw-2rem)] -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-700/55 bg-zinc-900/90 px-3 py-1.5 text-[10px] text-zinc-300 shadow-[0_8px_28px_rgba(0,0,0,0.5)] backdrop-blur-md md:-bottom-4 md:max-w-none md:px-4 md:py-2 md:text-[11px]"
             animate={{ y: [0, 7, 0] }}
             transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -252,10 +254,10 @@ export function Hero() {
         transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         aria-label="Scroll to projects"
       >
-        <span className="text-[9px] uppercase tracking-[0.22em]">scroll</span>
         <svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current">
           <path d="M12 5v14m0 0 6-6m-6 6-6-6" strokeWidth="1.75" />
         </svg>
+        <span className="text-[9px] uppercase tracking-[0.22em]">scroll</span>
       </motion.a>
     </motion.section>
   );

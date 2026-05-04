@@ -6,7 +6,7 @@ const tile = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.45, ease: "easeOut", delay },
+  transition: { duration: 0.45, ease: "easeOut" as const, delay },
 });
 
 const whatIDo = [
